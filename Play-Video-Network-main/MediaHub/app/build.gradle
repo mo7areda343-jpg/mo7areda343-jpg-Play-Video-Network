@@ -1,0 +1,22 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 33
+    defaultConfig {
+        applicationId "com.example.mediahub"
+        minSdkVersion 17
+        targetSdkVersion 18      // no runtime permissions on Android 4.3
+        versionCode 1
+        versionName "1.0"
+        ndk { abiFilters 'armeabi-v7a' }   // Cortex-A9 box
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions { abortOnError false }
+}
+
+dependencies {
+    implementation 'org.videolan.android:libvlc-all:3.6.0'
+}
